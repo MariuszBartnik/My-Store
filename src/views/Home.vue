@@ -1,18 +1,29 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Showcase :imageSrc="imageSrc">
+      <h2>MyStore</h2>
+    </Showcase>
+    <Newsletter />
+    <GoogleMap />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Showcase from '@/components/Showcase.vue'
+import Newsletter from '@/components/Newsletter.vue'
+import GoogleMap from '@/components/GoogleMap.vue'
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
-    HelloWorld
-  }
+    Showcase,
+    Newsletter,
+    GoogleMap
+  },
+  data(){
+    return {
+      imageSrc: require('@/assets/img/main-page.jpg')
+    }
+  },
 }
 </script>
